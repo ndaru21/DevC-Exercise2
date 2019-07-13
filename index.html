@@ -1,11 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Exercise 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Calculator</title>
+    <link href='https://use.fontawesome.com/releases/v5.4.2/css/all.css' rel='stylesheet' type='text/css' />
+    <style>
+        body {
+            background: url("https://i.ibb.co/CmgVky5/bg-blogtukang.png");
+        }
+
+        .container {
+            width: 40%;
+            margin: 5% 30%;
+            background: white;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 11px 7px 9px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container>h1 {
+            font-family: calibri;
+            font-size: 30px;
+            margin-bottom: 40px;
+        }
+
+        .group-form {
+            /* background: purple; */
+        }
+
+        .form-input {
+            text-align: center;
+            padding: 7px 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 1px solid grey;
+            outline: none;
+            width: 250px;
+        }
+
+        .hasil {
+            font-family: calibri;
+            font-size: 20px;
+        }
+
+        .tombol {
+            cursor: pointer;
+            padding: 10px 20px;
+            background: #3498db;
+            border: none;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-    <center>
-        <h1>Kalkulator</h1>
-    </center>
+    <div class="container">
+        <h1>Simple Calculator</h1>
+        <div class="group-form">
+            <input type="text" class="form-input" id="bilangan1" autocomplete="off"
+                placeholder="Masukkan Angka Pertama">
+            <input type="text" class="form-input" id="bilangan2" autocomplete="off" placeholder="Masukkan Angka Kedua"
+                required>
+        </div>
+
+        <button class="tombol" onclick="tambah(bilangan1.value, bilangan2.value)"><i class="fas fa-plus"></i>&nbsp;
+            Tambah</button>
+        <button class="tombol" onclick="kurang(bilangan1.value, bilangan2.value)"><i class="fas fa-minus"></i>&nbsp;
+            Kurang</button>
+        <button class="tombol" onclick="kali(bilangan1.value, bilangan2.value)"><i class="fas fa-times"></i>&nbsp;
+            Kali</button>
+        <button class="tombol" onclick="bagi(bilangan1.value, bilangan2.value)"><i class="fas fa-divide"></i>&nbsp;
+            Bagi</button>
+        <button class="tombol" onclick="modulus(bilangan1.value, bilangan2.value)"><i
+                class="fas fa-percentage"></i>&nbsp; Modulus</button>
+        <p class="hasil">Hasil: <b id="hasil"></b></p>
+    </div>
+
+    <script>
+        function tambah(val1, val2) {
+            var hasil = parseInt(val1) + parseInt(val2);
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+
+        function kurang(val1, val2) {
+            var hasil = parseInt(val1) - parseInt(val2);
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+
+        function kali(val1, val2) {
+            var hasil = parseInt(val1) * parseInt(val2);
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+
+        function bagi(val1, val2) {
+            var hasil = parseInt(val1) / parseInt(val2);
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+
+        function modulus(val1, val2) {
+            var hasil = parseInt(val1) % parseInt(val2);
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+    </script>
 </body>
+
 </html>
